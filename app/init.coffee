@@ -1,1 +1,1 @@
-window.DreamcodeComponents = Ember.Namespace.create()
+window.DreamcodeComponents ||= Ember.Namespace.create()
