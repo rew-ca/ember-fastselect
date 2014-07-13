@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Page for Ember Component Library Template</title>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.js"></script>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ember.js/1.5.1/ember.js"></script>
+  <script type="text/javascript" src="../bower_components/ember-renderspeed/ember-renderspeed.js"></script>
+
+
+  <script type="text/javascript" src="../build/ember-fastselect.min.js"></script>
+  <script type="text/javascript">
+    App = Em.Application.createWithMixins(DreamcodeComponents.Register);
+    
+    App.ApplicationController = Em.Controller.extend({
+      content: function() {
+        var arr = [];
+
+        for (var i=0; i<=1000; i++) {
+          arr.push({ label: "label " + i, value: "value " + i });
+        }
+
+        return arr;
+      }.property()
+    });
+  </script>
+</head>
+<body>
+  <style>
+    #viewport {
+      position: relative;
+      width: 600px;
+      height: 300px;
+    }
+  </style>
+  <script type="text/x-handlebars">
+    <div id="viewport">
+      Regular Select with 1000 items:
+      {{ view Ember.Select 
+          content=content 
+          optionLabelPath="content.label" 
+          optionValuePath="content.value" }}
+
+      <br/>
+
+      Fast Select with 1000 items:
+      {{ view DreamcodeComponents.EmberFastSelectView 
+          content=content 
+          optionLabelPath="content.label" 
+          optionValuePath="content.value" }}
+
+      <br/>
+
+      See console log for render speed comparisons.
+    </div>
+  </script>
+</body>
+</html>

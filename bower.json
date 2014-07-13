@@ -1,0 +1,29 @@
+{
+  "name": "ember-fastselect",
+  "version": "0.0.1",
+  "authors": [
+    "Radu Vlad <radu@dreamcode.ca>"
+  ],
+  "description": "Faster (static) select views for Ember.js",
+  "keywords": [
+    "ember",
+    "select"
+  ],
+  "license": "MIT",
+  "main": [
+    "build/ember-fastselect.min.js"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "app",
+    "Gruntfile.js",
+    "package.json"
+  ],
+  "devDependencies": {
+    "ember-renderspeed": "~1.0.0-beta"
+  }
+}
