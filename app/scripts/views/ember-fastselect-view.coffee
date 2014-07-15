@@ -4,7 +4,6 @@ DreamcodeComponents.EmberFastSelectView = Ember.Select.extend
 
     labelKey = get(this, "optionLabelPath").replace("content.", "")
     valueKey = get(this, "optionValuePath").replace("content.", "")
-    console.log labelKey, valueKey
 
     output = ""
     output += "<option>" + get(this, "prompt") + "</option>"  if get(this, "prompt")
